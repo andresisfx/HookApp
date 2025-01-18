@@ -5,7 +5,7 @@ import { UseForm } from '../hooks/UseForm'
 
 export const SimpleForm=()=> {
 
-        const {formState,nameUser,emailUser,passwordUser,handleInputChange} = UseForm(
+        const {formState,nameUser,onResetForm,emailUser,passwordUser,handleInputChange} = UseForm(
           {
             nameUser:'',
             emailUser:'',
@@ -43,7 +43,7 @@ export const SimpleForm=()=> {
                       <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
                     </div>
                     <button type="submit" className="btn btn-primary">Submit</button>
-                    <button  className="btn btn-primary">Reset</button>
+                    <button onClick={(event) => onResetForm(event)} className="btn btn-danger mx-5">Reset</button>
 
               </form>
               

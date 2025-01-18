@@ -14,10 +14,15 @@ export const UseForm = (initialForm={}) => {
          [name]:value
        })
      }
+        const onResetForm=(e)=>{ 
+          e.preventDefault()
+          setFormState(initialForm)
+        }
   return {
     ...formState,
     formState,
-    handleInputChange
+    handleInputChange,
+    onResetForm
   }
 }
 
