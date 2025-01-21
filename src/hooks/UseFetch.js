@@ -11,7 +11,7 @@ export const UseFetch = (uri) => {
 
   useEffect(() => {
     fetchData()
-  }, [])
+  }, [uri])
 
   const setLoadingState = () => {
     setState({
@@ -40,8 +40,6 @@ export const UseFetch = (uri) => {
     }
 
     const data = await response.json()
-      console.log(data)
-    
         setState({
             data:data,
             loading:false,
