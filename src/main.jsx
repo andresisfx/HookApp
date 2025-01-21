@@ -5,13 +5,14 @@ import './index.css'
 import { SimpleForm } from './components/SimpleForm.jsx'
 import { CounterApp } from './useState/CounterApp.jsx'
 import {CounterWithCustomHook}  from './useState/CounterWithCustomHook.jsx';
-
+import {MultipleCustomHooks}  from './Examples/MultipleCustomHooks.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <SimpleForm />
+    {/* <SimpleForm /> */}
     {/* <CounterApp /> */}
     {/* <CounterWithCustomHook /> */}
+    <MultipleCustomHooks />
 
   </StrictMode>,
 )
