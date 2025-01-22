@@ -6,13 +6,15 @@ import { SimpleForm } from './components/SimpleForm.jsx'
 import { CounterApp } from './useState/CounterApp.jsx'
 import {CounterWithCustomHook}  from './useState/CounterWithCustomHook.jsx';
 import {MultipleCustomHooks}  from './Examples/MultipleCustomHooks.jsx';
+import { FocusScreen } from './useRef/FocusScreen.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <SimpleForm /> */}
     {/* <CounterApp /> */}
     {/* <CounterWithCustomHook /> */}
-    <MultipleCustomHooks />
+    {/* <MultipleCustomHooks /> */}
+    <FocusScreen/>
 
   </StrictMode>,
 )
