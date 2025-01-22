@@ -8,6 +8,7 @@ import {CounterWithCustomHook}  from './useState/CounterWithCustomHook.jsx';
 import {MultipleCustomHooks}  from './Examples/MultipleCustomHooks.jsx';
 import { FocusScreen } from './useRef/FocusScreen.jsx';
 import { Memorize } from './memos/Memorize.jsx';
+import { MemoHook } from './memos/MemoHook.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -16,6 +17,7 @@ createRoot(document.getElementById('root')).render(
     {/* <CounterWithCustomHook /> */}
     {/* <MultipleCustomHooks /> */}
     {/* <FocusScreen/> */}
-    <Memorize/>
+    {/* <Memorize/> */}
+    <MemoHook/>
   </StrictMode>,
 )
