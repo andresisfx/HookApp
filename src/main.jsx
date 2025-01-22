@@ -9,6 +9,7 @@ import {MultipleCustomHooks}  from './Examples/MultipleCustomHooks.jsx';
 import { FocusScreen } from './useRef/FocusScreen.jsx';
 import { Memorize } from './memos/Memorize.jsx';
 import { MemoHook } from './memos/MemoHook.jsx';
+import { UseCallBack } from './memos/UseCallBack.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')).render(
     {/* <MultipleCustomHooks /> */}
     {/* <FocusScreen/> */}
     {/* <Memorize/> */}
-    <MemoHook/>
+    {/* <MemoHook/> */}
+    <UseCallBack/>
   </StrictMode>,
 )
