@@ -1,5 +1,5 @@
 import React from 'react'
-import {UseCounter} from '../hooks/useCounter'
+import {UseCounter} from '../hooks/UseCounter'
 import {Small} from './Small'
 import { useState } from 'react'
 
