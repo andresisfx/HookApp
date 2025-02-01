@@ -3,11 +3,11 @@ import { useState } from "react"
 export const UseCounter = (initialState=10) => {
     const [counter, setCounter] = useState(initialState)
 
-    const increment = (value) =>{
+    const increment = (value=1) =>{
         
-     setCounter(counter => counter + value)
+     setCounter(current => current + value)
     }
-    const decrement = (value) => {
+    const decrement = (value=1) => {
         if(counter < 1) return
         setCounter(counter - value)
     }
