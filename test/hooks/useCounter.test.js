@@ -1,5 +1,5 @@
 import { UseCounter } from "../../src/hooks/UseCounter.js"
-import { renderHook } from '@testing-library/react-hooks'
+import { act,renderHook } from '@testing-library/react-hooks'
 
 describe('Pruebas en useCounter', () => { 
     
@@ -16,6 +16,22 @@ describe('Pruebas en useCounter', () => {
         expect(reset).toEqual(expect.any(Function))
 
      })
+     test('Debe recibir el valor de 100',() => {
+        const { result } = renderHook( () => UseCounter(100) )
 
+        const { counter } = result.current;
+        expect(counter).toBe(100)
+     })
+     test('Debe incrementar el contador',() => {
+        const { result } = renderHook( () => UseCounter(100) )
+
+        const { counter, increment } = result.current;
+
+        act(() => {
+            increment()
+        })
+         
+        expect(result.current.counter).toBe(101)
+     })
 
 })
