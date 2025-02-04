@@ -15,7 +15,10 @@ export const UseForm = (initialForm={}) => {
        })
      }
         const onResetForm=(e)=>{ 
-          e.preventDefault()
+
+          if(e&&e.preventDefault){
+            e.preventDefault()
+          }
           setFormState(initialForm)
         }
   return {
