@@ -38,7 +38,10 @@ export const MultipleCustomHooks = () => {
 
       <button onClick={(event) => counter >1 && decrement(1)}>Anterior</button>
       <button onClick={reset}>Reset</button>
-      <button onClick={(event) => increment(1)}>Siguiente</button>
+      <button 
+      onClick={(event) => increment(1)}
+      disabled={loading}
+      >Siguiente</button>
     </>
   )
 }
