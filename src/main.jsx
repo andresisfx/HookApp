@@ -15,11 +15,11 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <SimpleForm /> */}
     {/* <CounterApp /> */}
-    {/* <CounterWithCustomHook /> */}
+    <CounterWithCustomHook />
     {/* <MultipleCustomHooks /> */}
     {/* <FocusScreen/> */}
     {/* <Memorize/> */}
     {/* <MemoHook/> */}
-    <UseCallBack/>
+    {/* <UseCallBack/> */}
   </StrictMode>,
 )

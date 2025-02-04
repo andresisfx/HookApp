@@ -1,47 +1,40 @@
 import React, { useEffect } from 'react';
 import { UseFetch } from '../hooks/UseFetch.js';
 import { UseCounter } from '../hooks/UseCounter.js';
-import { LoadingMessage } from './LoadingMessage.jsx';
+import { LoadingQuote } from './LoadingQuote.jsx';
 import { PokeCard } from './PokeCard.jsx';
+import { Quote } from './Quote.jsx';
+
+
+
 
 export const MultipleCustomHooks = () => {
-  const {counter,increment,decrement,reset} = UseCounter(1);
-  const uri=`https://pokeapi.co/api/v2/pokemon/${counter}`
-  const {data,loading} = UseFetch(uri)
- 
-  useEffect(() => {
+
+    const { counter, increment } = UseCounter(1);
+    const { data, isLoading, hasError } = UseFetch(`https://www.breakingbadapi.com/api/quotes/${ counter }`);
+    if(isLoading){
+      console.log("existe el loadig")
+    }
+    const { author, quote } = !!data && data[0];
     
-  }, [counter])
+    return (
+        <>
+            <h1>BreakingBad Quotes</h1>
+            <hr />
 
+            {
+                isLoading
+                 ? <LoadingQuote/>
+                 : <Quote author={ author } quote={ quote } />
+            }
+                      
+            <button 
+                className="btn btn-primary"
+                disabled={ isLoading }
+                onClick={ () => increment() }>
+                Next quote
+            </button>
 
-  return (
-    <>
-      <h1>MultipleCustomHooks</h1>
-      <hr />
-
-      {
-
-      loading ? 
-      <LoadingMessage/>:
-      (  <PokeCard 
-        id={data?.id}
-        name={data?.name} 
-        sprites={
-         
-          [data?.sprites.front_default,data?.sprites.back_default]
-        
-         }
-        />
-      )
-      }
-      <h2>{data?.name }</h2>
-
-      <button onClick={(event) => counter >1 && decrement(1)}>Anterior</button>
-      <button onClick={reset}>Reset</button>
-      <button 
-      onClick={(event) => increment(1)}
-      disabled={loading}
-      >Siguiente</button>
-    </>
-  )
+        </>
+    )
 }

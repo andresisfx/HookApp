@@ -3,7 +3,7 @@ import React, { useEffect,useState } from 'react'
 const localCache={};
 export const UseFetch = (uri) => {
 
-
+ 
   const [state, setState] = useState({
     data:null,
     loading:true,
@@ -63,7 +63,7 @@ export const UseFetch = (uri) => {
     }
     return {
         data:state.data,
-        loading:state.loading,
+        isLoading:state.loading,
         hasError:state.hasError,
         error:state.error
     }
